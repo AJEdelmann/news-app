@@ -1,11 +1,19 @@
 $main-bg: #3f3f3f;
 $header-bg: #212026;
-$header-height: 80px;
+$headerHeight: 80px;
+$labelDate: rgb(145, 103, 201);
+$labelSource: rgb(49, 170, 55);
 
 body,
 body * {
   box-sizing: border-box;
-  font-family: monospace;
+  font-family: "Work Sans", sans-serif;
+}
+
+a:-webkit-any-link {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 body,
@@ -21,7 +29,7 @@ html {
   background: $main-bg;
 
   .header {
-    height: $header-height;
+    height: $headerHeight;
     background: $header-bg;
     display: flex;
     flex-direction: row;
@@ -37,7 +45,7 @@ html {
       padding: 10px 20px;
       width: 400px;
       background: $main-bg;
-      color: #fff;
+      color: white;
 
       &:focus {
         outline: none;
@@ -46,6 +54,65 @@ html {
   }
 
   .news {
-    height: calc(100% - #{$header-height});
+    height: calc(100% - #{$headerHeight});
+    overflow: scroll;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+
+    .article {
+      background: $header-bg;
+      margin: 10px;
+      border-radius: 10px;
+      color: white;
+      overflow: hidden;
+      flex-basis: 23%;
+
+      .img {
+        position: relative;
+
+        img {
+          width: 100%;
+          height: 220px;
+          object-fit: cover;
+        }
+
+        .info {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+          align-content: flex-start;
+          padding: 0 10px;
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+
+          .source {
+            background: $labelSource;
+            padding: 2px 5px;
+            border-radius: 5px;
+          }
+
+          .date {
+            background: $labelDate;
+            padding: 2px 5px;
+            border-radius: 5px;
+          }
+        }
+      }
+
+      .title {
+        font-weight: 600;
+        padding: 0 10px;
+      }
+
+      .description {
+        padding: 0 10px;
+      }
+    }
   }
 }
