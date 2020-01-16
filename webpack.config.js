@@ -5,7 +5,7 @@ const {
 } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const autoprefixer = require('autoprefixer');
-const Dotenv = require('dotenv-webpack');
+// const Dotenv = require('dotenv-webpack');
 
 const config = {
   entry: ['babel-polyfill', './src/scripts/index.js'],
@@ -110,7 +110,7 @@ const config = {
       filename: 'styles/[name].css',
       chunkFilename: 'styles/chunks/[id].css'
     }),
-    new Dotenv()
+    // new Dotenv()
   ]
 };
 

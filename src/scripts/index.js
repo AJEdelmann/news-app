@@ -30,7 +30,6 @@ function getValue(e) {
     timeout = setTimeout(function () {
         if (value) {
             renderNews(value);
-            renderNews(value);
         } else cleanUp();
     }, 500);
 }

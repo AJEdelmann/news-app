@@ -24,7 +24,6 @@ function articleStructure(article) {
     .split(' ')
     .slice(0, 25)
     .join(' ');
-
   return `<div class="article"><a href="${article.url}" target="_blank">
     <div class="img">
       <img src="${article.urlToImage}" alt="" loading="lazy"/>
